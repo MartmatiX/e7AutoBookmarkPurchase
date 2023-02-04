@@ -3,7 +3,8 @@ Auto purchase of Covenant Bookmarks and Mystic Medals in Epic Seven Secret Shop.
 Prerequisites:
   1. Python
   2. PyCharm or any IDE
-  3. Epic Seven on PC running in BlueStacsk
+  3. OpenCV
+  4. Epic Seven on PC running in BlueStacsk
   
 Recommendations:
   1. Epic Seven HD pack downloaded
