@@ -85,7 +85,7 @@ def purchase():
 
 
 if __name__ == "__main__":
-    print("R to start\n"
+    print("R to start \n"
           "E to exit\n"
           "Application can NOT be stopped while running! If you need to stop press WIN + D, this fails image search "
           "and you can close the app via CTRL + C!")
