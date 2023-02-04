@@ -15,7 +15,7 @@ Recommendations:
 Usage:
   1. Download app
   2. Open in IDE of your choice (recommended PyCharm)
-  3. Import time, pyautogui, keyboard, sys, OpenCv
+  3. Import time, pyautogui, keyboard, sys, OpenCV
   4. Run program
   5. Enjoy :)
   
