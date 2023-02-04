@@ -4,9 +4,6 @@ import keyboard
 
 import sys
 
-BOOKMARKS = 0
-MYSTIC = 0
-
 
 def refresh():
     # Click Refresh button
@@ -40,8 +37,6 @@ def findCovenantBookmarks():
         pyautogui.click(pyautogui.position().x + 800, pyautogui.position().y + 30)
         time.sleep(0.2)
         pyautogui.click(pyautogui.locateCenterOnScreen("purchase_covenant_bookmark.png"))
-        global BOOKMARKS
-        BOOKMARKS = BOOKMARKS + 5
         time.sleep(1)
 
 
@@ -57,8 +52,6 @@ def findMysticMedals():
         pyautogui.click(pyautogui.position().x + 800, pyautogui.position().y + 30)
         time.sleep(0.2)
         pyautogui.click(pyautogui.locateCenterOnScreen("purchase_mystic_medals.png"))
-        global MYSTIC
-        MYSTIC = MYSTIC + 50
         time.sleep(1)
 
 
@@ -71,7 +64,7 @@ def scrollShop():
 def purchase():
     skystones = input("Skystones: ")
     possible_refreshes = int(int(skystones) / 3)
-    print("Number of refreshes:" + str(possible_refreshes))
+    print("Number of refreshes: " + str(possible_refreshes))
     while True:
         if keyboard.is_pressed("r"):
             for x in range(possible_refreshes):
@@ -86,9 +79,6 @@ def purchase():
                 print("-----------------")
             print("-----------------")
             print("Finished...")
-            print("Acquired total of:\n"
-                  + str(BOOKMARKS) + " Covenant Bookmarks\n"
-                  + str(MYSTIC) + " Mystic Medals")
         if keyboard.is_pressed("e"):
             print("Exiting....")
             sys.exit()
