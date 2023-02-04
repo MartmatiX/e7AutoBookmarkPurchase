@@ -21,5 +21,5 @@ Usage:
   
 Disclaimer:
   1. If the program misses some Bookmarks or Medals that sounds like your problem :)
-  2. While the programm is running you can not stop it, so while the program is waiting for something to finish, quicky kill it in the IDE or press WIN + D and mess up the image recognition
+  2. While the program is running you can not stop it, so while the program is waiting for something to finish, quicky kill it in the IDE or press WIN + D and mess up the image recognition
   3. Your mouse is unusable during the process
