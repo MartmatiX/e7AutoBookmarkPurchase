@@ -4,6 +4,9 @@ import keyboard
 
 import sys
 
+BOOKMARKS = 0
+MYSTIC = 0
+
 
 def refresh():
     # Click Refresh button
@@ -34,9 +37,11 @@ def findCovenantBookmarks():
         print("Bookmarks not found...")
     else:
         pyautogui.moveTo(covenantCoordinates)
-        pyautogui.click(pyautogui.position().x + 800, pyautogui.position().y)
+        pyautogui.click(pyautogui.position().x + 800, pyautogui.position().y + 30)
         time.sleep(0.2)
         pyautogui.click(pyautogui.locateCenterOnScreen("purchase_covenant_bookmark.png"))
+        global BOOKMARKS
+        BOOKMARKS = BOOKMARKS + 5
         time.sleep(1)
 
 
@@ -49,9 +54,11 @@ def findMysticMedals():
         print("Medals not found...")
     else:
         pyautogui.moveTo(mysticCoordinates)
-        pyautogui.click(pyautogui.position().x + 800, pyautogui.position().y)
+        pyautogui.click(pyautogui.position().x + 800, pyautogui.position().y + 30)
         time.sleep(0.2)
         pyautogui.click(pyautogui.locateCenterOnScreen("purchase_mystic_medals.png"))
+        global MYSTIC
+        MYSTIC = MYSTIC + 50
         time.sleep(1)
 
 
@@ -61,24 +68,35 @@ def scrollShop():
     time.sleep(1)
 
 
-def kb():
+def purchase():
+    skystones = input("Skystones: ")
+    possible_refreshes = int(int(skystones) / 3)
+    print("Number of refreshes:" + str(possible_refreshes))
     while True:
         if keyboard.is_pressed("r"):
-            refresh()
-            confirm()
-            findCovenantBookmarks()
-            findMysticMedals()
-            scrollShop()
-            findCovenantBookmarks()
-            findMysticMedals()
-            print("Cycle finished...")
+            for x in range(possible_refreshes):
+                refresh()
+                confirm()
+                findCovenantBookmarks()
+                findMysticMedals()
+                scrollShop()
+                findCovenantBookmarks()
+                findMysticMedals()
+                print("Cycle finished...")
+                print("-----------------")
+            print("-----------------")
+            print("Finished...")
+            print("Acquired total of:\n"
+                  + str(BOOKMARKS) + " Covenant Bookmarks\n"
+                  + str(MYSTIC) + " Mystic Medals")
         if keyboard.is_pressed("e"):
-            print("Exiting...")
+            print("Exiting....")
             sys.exit()
 
 
 if __name__ == "__main__":
-    print("Controls:\n"
-          "R for refresh\n"
-          "E for exitr")
-    kb()
+    print("R to start\n"
+          "E to exit\n"
+          "Application can NOT be stopped while running! If you need to stop press WIN + D, this fails image search "
+          "and you can close the app in IDE!")
+    purchase()
