@@ -7,7 +7,7 @@ Prerequisites:
   
 Recommendations:
   1. Epic Seven HD pack downloaded
-  2. Bluestacks running in 1920x1200 resolution
+  2. Bluestacks running in 1600x900 resolution
     - tested on this resolution, and because I can't be bothered to make it any better, some values are hardcoded for this resolution, but it might work on other resolutions as well (if you change the X axis the mouse is moving when it finds Bookmark or Medal, or upload higher quality images)
     
 Usage:
